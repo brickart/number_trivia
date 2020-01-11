@@ -93,7 +93,7 @@ main() {
           when(mockRemoteDataSource.getConcreteNumberTrivia(any))
             .thenAnswer((_) async => tNumberTriviaModel);
           // act
-          final result = await repository.getConcreteNumberTrivia(tNumber);
+          await repository.getConcreteNumberTrivia(tNumber);
           // assert
           verify(mockRemoteDataSource.getConcreteNumberTrivia(tNumber));
           verify(mockLocalDataSource.cacheNumberTrivia(tNumberTriviaModel));
@@ -184,7 +184,7 @@ main() {
           when(mockRemoteDataSource.getRandomNumberTrivia())
             .thenAnswer((_) async => tNumberTriviaModel);
           // act
-          final result = await repository.getRandomNumberTrivia();
+          await repository.getRandomNumberTrivia();
           // assert
           verify(mockRemoteDataSource.getRandomNumberTrivia());
           verify(mockLocalDataSource.cacheNumberTrivia(tNumberTriviaModel));
